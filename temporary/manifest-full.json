@@ -1,0 +1,34 @@
+{
+  "name": "Lego Logger Extension",
+  "version": "1.0",
+  "description": "Logger for @koreez/lego package",
+  "manifest_version": 2,
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_idle",
+      "matches": ["*://localhost/*", "*://192.168/*", "*://127.0.0.0/*", "*://0.0.0.0/*", "<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "icon_disabled.png",
+    "default_title": "LegoLogger"
+  },
+  "permissions": ["activeTab", "tabs"],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Opens hello.html"
+    }
+  }
+}

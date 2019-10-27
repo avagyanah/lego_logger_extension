@@ -1,0 +1,13 @@
+{
+  "name": "Lego Logger Extension",
+  "version": "1.0",
+  "description": "Logger for @koreez/lego package",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "assets/icon_enabled.png"
+  },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "permissions": ["storage"]
+}
